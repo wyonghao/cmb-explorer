@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMB Explorer - Interactive Cosmic Microwave Background</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CMB Explorer</h1>
+            <p class="subtitle">An interactive exploration of the Cosmic Microwave Background</p>
+        </header>
+        
+        <main>
+            <div class="image-wrapper">
+                <img 
+                    id="cmb-image" 
+                    src="public/images/cmb-planck.jpg" 
+                    alt="Cosmic Microwave Background - Full Sky Map"
+                    crossorigin="anonymous"
+                />
+                <canvas id="pixel-canvas" style="display: none;"></canvas>
+                <div id="tooltip" class="tooltip">
+                    <div class="tooltip-content">
+                        <div class="tooltip-row">
+                            <span class="label">Pixel coordinates:</span>
+                            <span id="pixel-coords" class="value">—</span>
+                        </div>
+                        <div class="tooltip-row">
+                            <span class="label">Normalised coords:</span>
+                            <span id="norm-coords" class="value">—</span>
+                        </div>
+                        <div class="tooltip-row">
+                            <span class="label">RGB value:</span>
+                            <span id="rgb-value" class="value">—</span>
+                        </div>
+                        <div class="tooltip-note">
+                            Colour represents relative temperature fluctuation (visualised, not absolute).
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h2>About this visualization</h2>
+                <p>
+                    This image shows the Cosmic Microwave Background as observed by the Planck satellite. 
+                    Hover or click on the image to explore pixel-level data. The colours in this image 
+                    represent tiny temperature variations in the early universe, though the specific 
+                    colour mapping is for visualization purposes.
+                </p>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
